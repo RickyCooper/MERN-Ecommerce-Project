@@ -18,11 +18,11 @@ const userSchema = mongoose.Schema({
         type: Boolean,
         required: true,
         default: false
-    }, },
+    },},
     {
         timestamps:true
     });
 
-const User = mongoose.Model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 export default User;

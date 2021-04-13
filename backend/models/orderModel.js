@@ -59,11 +59,11 @@ const orderSchema = mongoose.Schema({
     },   
     deliveredAt: {
         type: Date,
-    },
-    },{    
+    },},
+    {    
     timestamps:true
     });
 
-const Order = mongoose.Model('Order', OrderSchema);
+const Order = mongoose.model('Order', orderSchema);
 
 export default Order;
