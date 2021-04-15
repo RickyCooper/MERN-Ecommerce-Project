@@ -1,10 +1,10 @@
 import {Button, Card, Col, Form, Image, ListGroup, Row} from 'react-bootstrap';
 import React, { useEffect } from 'react';
-import { addToCart, removeFromCart } from '../actions/cartAction';
+import { addToCart, removeFromCart } from '../../actions/cartActions';
 import {useDispatch, useSelector} from 'react-redux';
 
 import {Link} from 'react-router-dom';
-import Message from '../../component/Message/Message';
+import Message from '../../components/Message/Message';
 
 const CartScreen = ({match, location, history}) => {
     const productId = match.params.id;
