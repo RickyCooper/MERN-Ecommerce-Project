@@ -2,6 +2,8 @@ import AsyncHandler from 'express-async-handler';
 import User from '../models/userModel.js';
 import generateToken from '../utils/generateToken.js'
 
+// Controllers are middleware that react to spesific calls to the api determined by the routers. 
+
 // @desc Auth user & get token 
 // @route POST /api/users/login
 // @access Public

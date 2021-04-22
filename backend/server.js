@@ -4,23 +4,36 @@ import colors from 'colors';
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 import express from 'express';
+import orderRoutes from './routes/orderRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
-connectDB(); 
+connectDB(); // connect MongoDB database
 
 const app = express();
 
 app.use(express.json()); // <- allows you to accept json data in the body 
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => { 
     res.send('Api is running')
 })
 
+app.get('/api/config/paypal', (req, res) => 
+    res.send(process.env.PAYPAL_CLIENT_ID)
+)
+
+/* [ NOTES ] 
+
+ - req is an object containing information about the HTTP request that raised the event
+ - res to send back the desired HTTP response.
+
+*/ 
+
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

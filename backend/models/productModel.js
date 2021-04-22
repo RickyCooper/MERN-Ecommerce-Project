@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+// A Mongoose schema defines the structure of the document, default values, validators. 
+
 const reviewSchema = mongoose.Schema({
     name: {
         type: String,
@@ -17,7 +19,6 @@ const reviewSchema = mongoose.Schema({
         timestamps:true
     }
 );
-
 
 const productSchema = mongoose.Schema({
     user: {
@@ -70,5 +71,7 @@ const productSchema = mongoose.Schema({
 );
 
 const Product = mongoose.model('Product', productSchema);
+
+// A Mongoose model provides an interface to the database for creating, querying, updating, deleting records
 
 export default Product;
